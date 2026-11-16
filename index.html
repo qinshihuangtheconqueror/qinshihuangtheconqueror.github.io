@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Hoang Huy — AI Full-stack Engineer</title>
+  <meta name="description" content="Le Hoang Huy (Lê Hoàng Huy) — AI Full-stack Engineer in Hanoi, Vietnam. I build production LLM systems end to end: agentic backends, RAG pipelines, and the guardrails that keep them grounded." />
+  <meta name="author" content="Le Hoang Huy" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Le Hoang Huy — AI Full-stack Engineer" />
+  <meta property="og:description" content="I build production LLM systems end to end: agentic backends, RAG pipelines, and the guardrails that keep them grounded." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Inline SVG Favicon (initials LH) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0f17' stroke='%2338bdf8' stroke-width='3'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='28' fill='%2338bdf8'%3ELH%3C/text%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Sticky Navigation -->
+  <header class="site-header" id="top">
+    <div class="container nav-container">
+      <a href="#top" class="brand" aria-label="Le Hoang Huy — Home">
+        <span class="brand-badge" aria-hidden="true">LH</span>
+        <span class="brand-text">Le Hoang Huy</span>
+      </a>
+
+      <div class="nav-controls">
+        <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
+          <ul class="nav-list" id="nav-menu">
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#experience">Experience</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#education">Education</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          class="icon-btn theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to light theme"
+          title="Toggle color theme"
+        >
+          <svg class="icon icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          class="icon-btn menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open navigation menu"
+        >
+          <svg class="icon icon-menu" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="icon icon-close" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero section" aria-labelledby="hero-heading">
+      <div class="container hero-container reveal">
+        <div class="hero-meta">
+          <span class="status-pill">Hanoi, Vietnam</span>
+          <span class="vn-name" lang="vi">Lê Hoàng Huy</span>
+        </div>
+        <h1 id="hero-heading" class="hero-name">Le Hoang Huy</h1>
+        <p class="hero-title">AI Full-stack Engineer</p>
+        <p class="hero-tagline">
+          I build production LLM systems end to end: agentic backends, RAG pipelines, and the guardrails that keep them grounded.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="mailto:13charlottekatakuri@gmail.com" class="btn btn-secondary">Email me</a>
+        </div>
+        <div class="hero-links" aria-label="Profile links">
+          <a href="https://github.com/qinshihuangtheconqueror" target="_blank" rel="noopener" class="text-link">GitHub</a>
+          <span class="divider" aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com/in/huy-le-hoang-18064525b/" target="_blank" rel="noopener" class="text-link">LinkedIn</a>
+          <span class="divider" aria-hidden="true">·</span>
+          <a href="mailto:13charlottekatakuri@gmail.com" class="text-link">13charlottekatakuri@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section" aria-label="Production pilot metrics">
+      <div class="container">
+        <div class="metrics-header reveal">
+          <span class="metrics-caption">HUSTVA 4-week production pilot</span>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-tile reveal">
+            <span class="metric-value">54k+</span>
+            <span class="metric-label">conversations</span>
+          </div>
+          <div class="metric-tile reveal">
+            <span class="metric-value">~3,900</span>
+            <span class="metric-label">students</span>
+          </div>
+          <div class="metric-tile reveal">
+            <span class="metric-value">88.9%</span>
+            <span class="metric-label">user satisfaction</span>
+          </div>
+          <div class="metric-tile reveal">
+            <span class="metric-value">90.3%</span>
+            <span class="metric-label">routing accuracy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">01 / Profile</span>
+          <h2 id="about-heading" class="section-title">About</h2>
+        </div>
+        <div class="about-card reveal">
+          <p>
+            I am an AI Full-stack Engineer based in Hanoi, Vietnam, focused on building production LLM systems end to end—spanning agentic backends, hybrid RAG pipelines, and the guardrails that keep them grounded.
+          </p>
+          <p>
+            At Infratech JSC, I engineer event-driven withdrawal and payout processing for the Chocolate Finance serverless banking platform on AWS with TypeScript and fp-ts, building on earlier software and AI backend internships at Viettel High Tech and FPT Software.
+          </p>
+          <p>
+            For my Computer Science graduation thesis at Hanoi University of Science and Technology (HUST, Class of 2026), I architected HUSTVA—an agentic academic chatbot evaluated over a 4-week production pilot across ~3,900 students and 54k+ conversations with 88.9% user satisfaction and 90.3% routing accuracy—alongside KMS, a multi-tenant knowledge management and hybrid retrieval platform.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">02 / Systems &amp; Architecture</span>
+          <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: HUSTVA -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">HUSTVA — Agentic Academic Chatbot</h3>
+                <p class="project-period">Graduation thesis · Feb–Jul 2026</p>
+              </div>
+            </div>
+            <p class="project-description">
+              LangGraph state machine (dual-router → ReAct → compose → finalize) with a global error guard and MongoDB checkpointing; hybrid intent router (regex + kNN over 145 examples, leave-one-out recall 97.9% → 100%); parallel ReAct tool loop with timeouts and bounded retry; mandatory-RAG safety net for grounded, cited answers; ingress prompt-injection guard and confidence-gated hallucination guard; dual-lane SSE A/B harness.
+            </p>
+            <ul class="chip-list" aria-label="HUSTVA technology stack">
+              <li class="chip">NestJS</li>
+              <li class="chip">TypeScript</li>
+              <li class="chip">LangGraph</li>
+              <li class="chip">Gemini</li>
+              <li class="chip">MongoDB</li>
+              <li class="chip">Redis</li>
+              <li class="chip">SSE</li>
+              <li class="chip">Langfuse</li>
+            </ul>
+          </article>
+
+          <!-- Project 2: KMS -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">KMS — Knowledge Management Platform</h3>
+                <p class="project-period">Graduation thesis · Feb–Jul 2026</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Crawl → parse → chunk → embed → index → version pipeline behind a CQRS design and a single retrieval gateway; zero-downtime versioning with SHA-256 content-hash vector inheritance and atomic version-pointer flip; cost-aware multi-stage parser with per-page OCR escalation; async 3-tier ingestion over RabbitMQ with a queue-depth autoscaler; hybrid retrieval (BGE-M3 dense + BM25 → RRF → cross-encoder rerank); 4-layer multi-tenant isolation with a Milvus filter-injection whitelist.
+            </p>
+            <ul class="chip-list" aria-label="KMS technology stack">
+              <li class="chip">Python</li>
+              <li class="chip">FastAPI</li>
+              <li class="chip">Milvus</li>
+              <li class="chip">MongoDB</li>
+              <li class="chip">RabbitMQ</li>
+              <li class="chip">MinIO</li>
+              <li class="chip">Redis</li>
+              <li class="chip">Docker</li>
+            </ul>
+          </article>
+
+          <!-- Project 3: Multi-agent dev workflow -->
+          <article class="project-card reveal">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Multi-agent dev workflow</h3>
+                <p class="project-period">Agentic engineering workflow</p>
+              </div>
+            </div>
+            <p class="project-description">
+              Claude Code as lead dispatching tasks to Codex and Antigravity via a file-based task protocol (spec → dispatch → independent verification → merge).
+            </p>
+            <ul class="chip-list" aria-label="Multi-agent dev workflow stack">
+              <li class="chip">Claude Code</li>
+              <li class="chip">Codex</li>
+              <li class="chip">Antigravity</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">03 / Career</span>
+          <h2 id="experience-heading" class="section-title">Experience</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-role">Infratech JSC — Software Engineer, Chocolate Finance (serverless banking platform)</h3>
+                <span class="timeline-date">Nov 2024 – Present</span>
+              </div>
+              <p class="timeline-description">
+                Withdrawal / payout processing on AWS Lambda + API Gateway + SQS in TypeScript with fp-ts; event-driven payout confirmation &amp; notifications; feature flags and gradual rollouts; IaC with AWS CDK; production monitoring with Sentry and CloudWatch; test suites for transaction serializers.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-role">Viettel High Tech — Software Engineering Intern</h3>
+                <span class="timeline-date">Jun 2024 – Sep 2024</span>
+              </div>
+              <p class="timeline-description">
+                Full-stack e-commerce app (ReactJS + Play Framework).
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="timeline-role">FPT Software — AI/Backend Intern (Alita, AI education assistant)</h3>
+                <span class="timeline-date">Sep 2023 – Feb 2024</span>
+              </div>
+              <p class="timeline-description">
+                FastAPI endpoints for AI features, Azure Cosmos DB (MongoDB API), Docker, GitHub Actions CI/CD, React/TypeScript UI.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">04 / Capabilities</span>
+          <h2 id="skills-heading" class="section-title">Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Languages</h3>
+            <ul class="chip-list" aria-label="Languages">
+              <li class="chip">TypeScript</li>
+              <li class="chip">Python</li>
+              <li class="chip">JavaScript</li>
+              <li class="chip">SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Backend</h3>
+            <ul class="chip-list" aria-label="Backend">
+              <li class="chip">NestJS</li>
+              <li class="chip">Node.js</li>
+              <li class="chip">FastAPI</li>
+              <li class="chip">REST</li>
+              <li class="chip">SSE</li>
+              <li class="chip">event-driven workers</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">AI / LLM</h3>
+            <ul class="chip-list" aria-label="AI and LLM">
+              <li class="chip">LangGraph</li>
+              <li class="chip">ReAct agents</li>
+              <li class="chip">RAG</li>
+              <li class="chip">hybrid retrieval</li>
+              <li class="chip">LLM evaluation (Precision@k, MRR, RAGAS)</li>
+              <li class="chip">guardrails</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Data &amp; messaging</h3>
+            <ul class="chip-list" aria-label="Data and messaging">
+              <li class="chip">MongoDB</li>
+              <li class="chip">Redis</li>
+              <li class="chip">MySQL</li>
+              <li class="chip">SQL Server</li>
+              <li class="chip">Milvus</li>
+              <li class="chip">RabbitMQ</li>
+              <li class="chip">AWS SQS</li>
+              <li class="chip">MinIO/S3</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Cloud &amp; ops</h3>
+            <ul class="chip-list" aria-label="Cloud and ops">
+              <li class="chip">AWS (Lambda, API Gateway, SQS, CDK)</li>
+              <li class="chip">Docker</li>
+              <li class="chip">Kubernetes</li>
+              <li class="chip">OpenTelemetry</li>
+              <li class="chip">GitHub Actions</li>
+              <li class="chip">Sentry</li>
+              <li class="chip">CloudWatch</li>
+              <li class="chip">Langfuse</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">Frontend</h3>
+            <ul class="chip-list" aria-label="Frontend">
+              <li class="chip">React</li>
+              <li class="chip">Next.js</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section" aria-labelledby="education-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">05 / Academic Background</span>
+          <h2 id="education-heading" class="section-title">Education</h2>
+        </div>
+
+        <div class="education-card reveal">
+          <div class="education-main">
+            <h3 class="education-school">Hanoi University of Science and Technology (HUST)</h3>
+            <p class="education-degree">B.Eng. Computer Science · Class of 2026</p>
+          </div>
+          <div class="education-badges" aria-label="Academic metrics">
+            <span class="edu-badge">CPA 3.6/4.0</span>
+            <span class="edu-badge">IELTS 7.0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="site-footer" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="footer-card reveal">
+        <div class="footer-info">
+          <span class="section-eyebrow">06 / Contact</span>
+          <h2 id="contact-heading" class="footer-title">Get in touch</h2>
+          <p class="footer-subtitle">
+            Based in Hanoi, Vietnam. Reach out via email for AI / full-stack engineering opportunities.
+          </p>
+          <a href="mailto:13charlottekatakuri@gmail.com" class="btn btn-primary footer-cta">
+            13charlottekatakuri@gmail.com
+          </a>
+        </div>
+
+        <div class="footer-links-block">
+          <ul class="footer-links" aria-label="Contact and social links">
+            <li>
+              <a href="mailto:13charlottekatakuri@gmail.com" class="footer-link">Email</a>
+            </li>
+            <li>
+              <a href="https://github.com/qinshihuangtheconqueror" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/huy-le-hoang-18064525b/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+            </li>
+          </ul>
+          <p class="footer-meta">
+            Le Hoang Huy (<span lang="vi">Lê Hoàng Huy</span>) · AI Full-stack Engineer · Hanoi, Vietnam
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
