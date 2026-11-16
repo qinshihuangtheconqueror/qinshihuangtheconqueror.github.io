@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Le Hoang Huy — AI Full-stack Engineer</title>
   <meta name="description" content="Le Hoang Huy (Lê Hoàng Huy) — AI Full-stack Engineer in Hanoi, Vietnam. I build production LLM systems end to end: agentic backends, RAG pipelines, and the guardrails that keep them grounded." />
   <meta name="author" content="Le Hoang Huy" />
@@ -14,12 +14,22 @@
   <meta property="og:locale" content="en_US" />
 
   <!-- Inline SVG Favicon (initials LH) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0f17' stroke='%2338bdf8' stroke-width='3'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='28' fill='%2338bdf8'%3ELH%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23070912' stroke='%235eead4' stroke-width='3'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='26' fill='%235eead4'%3ELH%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Bricolage Grotesque, Manrope, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
 
   <!-- Sticky Navigation -->
   <header class="site-header" id="top">
@@ -88,52 +98,131 @@
 
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="hero section" aria-labelledby="hero-heading">
-      <div class="container hero-container reveal">
-        <div class="hero-meta">
-          <span class="status-pill">Hanoi, Vietnam</span>
-          <span class="vn-name" lang="vi">Lê Hoàng Huy</span>
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+      <canvas id="hero-graph" aria-hidden="true"></canvas>
+
+      <div class="hero-aurora" aria-hidden="true">
+        <span class="aurora-blob aurora-blob--signal"></span>
+        <span class="aurora-blob aurora-blob--agent"></span>
+        <span class="aurora-blob aurora-blob--guard"></span>
+      </div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-top intro-step intro-step--1">
+          <p class="hero-eyebrow">
+            <span>AI FULL-STACK ENGINEER · HANOI</span>
+            <span class="hero-eyebrow-sep" aria-hidden="true">/</span>
+            <span class="vn-name" lang="vi">Lê Hoàng Huy</span>
+          </p>
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Open to AI engineering roles</span>
+          </div>
         </div>
-        <h1 id="hero-heading" class="hero-name">Le Hoang Huy</h1>
-        <p class="hero-title">AI Full-stack Engineer</p>
-        <p class="hero-tagline">
-          I build production LLM systems end to end: agentic backends, RAG pipelines, and the guardrails that keep them grounded.
+
+        <h1 id="hero-heading" class="hero-name intro-step intro-step--2">
+          <span class="hero-name-given">Le Hoang</span>
+          <span class="hero-name-surname">Huy</span>
+        </h1>
+
+        <p class="hero-title sr-only">AI Full-stack Engineer in Hanoi, Vietnam</p>
+
+        <p class="hero-tagline intro-step intro-step--3">
+          I build production LLM systems end to end: <span class="hl-agent">agentic backends</span>, <span class="hl-signal">RAG pipelines</span>, and the <span class="hl-guard">guardrails</span> that keep them grounded.
         </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View projects</a>
-          <a href="mailto:13charlottekatakuri@gmail.com" class="btn btn-secondary">Email me</a>
+
+        <div class="hero-legend intro-step intro-step--4" aria-label="System signal legend">
+          <span class="legend-chip legend-chip--signal">
+            <span class="legend-dot" aria-hidden="true"></span>Signal · Data &amp; RAG
+          </span>
+          <span class="legend-chip legend-chip--agent">
+            <span class="legend-dot" aria-hidden="true"></span>Agent · LLM Orchestration
+          </span>
+          <span class="legend-chip legend-chip--guard">
+            <span class="legend-dot" aria-hidden="true"></span>Guardrail · Safety &amp; Verification
+          </span>
         </div>
-        <div class="hero-links" aria-label="Profile links">
-          <a href="https://github.com/qinshihuangtheconqueror" target="_blank" rel="noopener" class="text-link">GitHub</a>
-          <span class="divider" aria-hidden="true">·</span>
-          <a href="https://www.linkedin.com/in/huy-le-hoang-18064525b/" target="_blank" rel="noopener" class="text-link">LinkedIn</a>
-          <span class="divider" aria-hidden="true">·</span>
-          <a href="mailto:13charlottekatakuri@gmail.com" class="text-link">13charlottekatakuri@gmail.com</a>
+
+        <div class="hero-cta-group intro-step intro-step--5">
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary magnetic-btn">
+              <span>View projects</span>
+              <svg class="btn-arrow" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="10" x2="16" y2="10"></line>
+                <polyline points="10 4 16 10 10 16"></polyline>
+              </svg>
+            </a>
+            <a href="mailto:13charlottekatakuri@gmail.com" class="btn btn-secondary magnetic-btn">
+              <span>Email me</span>
+            </a>
+          </div>
+
+          <div class="hero-links" aria-label="Profile links">
+            <a href="https://github.com/qinshihuangtheconqueror" target="_blank" rel="noopener" class="text-link">GitHub</a>
+            <span class="divider" aria-hidden="true">·</span>
+            <a href="https://www.linkedin.com/in/huy-le-hoang-18064525b/" target="_blank" rel="noopener" class="text-link">LinkedIn</a>
+            <span class="divider" aria-hidden="true">·</span>
+            <a href="mailto:13charlottekatakuri@gmail.com" class="text-link">13charlottekatakuri@gmail.com</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Metrics Section -->
+    <!-- Metrics Band -->
     <section class="metrics-section" aria-label="Production pilot metrics">
       <div class="container">
-        <div class="metrics-header reveal">
-          <span class="metrics-caption">HUSTVA 4-week production pilot</span>
+        <div class="metrics-header">
+          <span class="metrics-caption">
+            <span class="caption-dot" aria-hidden="true"></span>
+            HUSTVA 4-week production pilot
+          </span>
+          <span class="metrics-subcaption">Production pilot results · Hanoi University of Science and Technology</span>
         </div>
+
         <div class="metrics-grid">
-          <div class="metric-tile reveal">
-            <span class="metric-value">54k+</span>
+          <div class="metric-tile metric-tile--signal">
+            <span
+              class="metric-value"
+              data-count-target="54"
+              data-count-prefix=""
+              data-count-suffix="k+"
+              data-count-decimals="0"
+            >54k+</span>
             <span class="metric-label">conversations</span>
           </div>
-          <div class="metric-tile reveal">
-            <span class="metric-value">~3,900</span>
+
+          <div class="metric-tile metric-tile--agent">
+            <span
+              class="metric-value"
+              data-count-target="3900"
+              data-count-prefix="~"
+              data-count-suffix=""
+              data-count-decimals="0"
+              data-count-comma="true"
+            >~3,900</span>
             <span class="metric-label">students</span>
           </div>
-          <div class="metric-tile reveal">
-            <span class="metric-value">88.9%</span>
+
+          <div class="metric-tile metric-tile--signal">
+            <span
+              class="metric-value"
+              data-count-target="88.9"
+              data-count-prefix=""
+              data-count-suffix="%"
+              data-count-decimals="1"
+            >88.9%</span>
             <span class="metric-label">user satisfaction</span>
           </div>
-          <div class="metric-tile reveal">
-            <span class="metric-value">90.3%</span>
+
+          <div class="metric-tile metric-tile--guard">
+            <span
+              class="metric-value"
+              data-count-target="90.3"
+              data-count-prefix=""
+              data-count-suffix="%"
+              data-count-decimals="1"
+            >90.3%</span>
             <span class="metric-label">routing accuracy</span>
           </div>
         </div>
@@ -143,20 +232,41 @@
     <!-- About Section -->
     <section id="about" class="section" aria-labelledby="about-heading">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">01 / Profile</span>
+        <div class="section-header">
+          <span class="section-eyebrow">System Architecture &amp; Profile</span>
           <h2 id="about-heading" class="section-title">About</h2>
         </div>
-        <div class="about-card reveal">
-          <p>
-            I am an AI Full-stack Engineer based in Hanoi, Vietnam, focused on building production LLM systems end to end—spanning agentic backends, hybrid RAG pipelines, and the guardrails that keep them grounded.
-          </p>
-          <p>
-            At Infratech JSC, I engineer event-driven withdrawal and payout processing for the Chocolate Finance serverless banking platform on AWS with TypeScript and fp-ts, building on earlier software and AI backend internships at Viettel High Tech and FPT Software.
-          </p>
-          <p>
-            For my Computer Science graduation thesis at Hanoi University of Science and Technology (HUST, Class of 2026), I architected HUSTVA—an agentic academic chatbot evaluated over a 4-week production pilot across ~3,900 students and 54k+ conversations with 88.9% user satisfaction and 90.3% routing accuracy—alongside KMS, a multi-tenant knowledge management and hybrid retrieval platform.
-          </p>
+
+        <div class="about-layout">
+          <div class="about-prose">
+            <p class="about-lead">
+              I am an AI Full-stack Engineer based in Hanoi, Vietnam, focused on building production LLM systems end to end—spanning agentic backends, hybrid RAG pipelines, and the guardrails that keep them grounded.
+            </p>
+            <p>
+              At Infratech JSC, I engineer event-driven withdrawal and payout processing for the Chocolate Finance serverless banking platform on AWS with TypeScript and fp-ts, building on earlier software and AI backend internships at Viettel High Tech and FPT Software.
+            </p>
+            <p>
+              For my Computer Science graduation thesis at Hanoi University of Science and Technology (HUST, Class of 2026), I architected HUSTVA—an agentic academic chatbot evaluated over a 4-week production pilot across ~3,900 students and 54k+ conversations with 88.9% user satisfaction and 90.3% routing accuracy—alongside KMS, a multi-tenant knowledge management and hybrid retrieval platform.
+            </p>
+          </div>
+
+          <aside class="about-pillars" aria-label="Core engineering pillars">
+            <div class="pillar-item pillar-item--agent">
+              <span class="pillar-tag">AGENT LAYER</span>
+              <h3 class="pillar-title">Stateful Orchestration</h3>
+              <p class="pillar-desc">LangGraph state machines, hybrid intent routers, and bounded parallel ReAct tool execution.</p>
+            </div>
+            <div class="pillar-item pillar-item--signal">
+              <span class="pillar-tag">SIGNAL LAYER</span>
+              <h3 class="pillar-title">Hybrid Retrieval &amp; Ingestion</h3>
+              <p class="pillar-desc">Multi-stage OCR parsing, dense BGE-M3 + BM25 RRF fusion, and zero-downtime vector versioning.</p>
+            </div>
+            <div class="pillar-item pillar-item--guard">
+              <span class="pillar-tag">GUARDRAIL LAYER</span>
+              <h3 class="pillar-title">Safety &amp; Deterministic Control</h3>
+              <p class="pillar-desc">Ingress prompt-injection shields, confidence-gated hallucination checks, and fp-ts serverless pipelines.</p>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -164,74 +274,224 @@
     <!-- Featured Projects Section -->
     <section id="projects" class="section" aria-labelledby="projects-heading">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">02 / Systems &amp; Architecture</span>
+        <div class="section-header">
+          <span class="section-eyebrow">Systems &amp; Architecture</span>
           <h2 id="projects-heading" class="section-title">Featured Projects</h2>
         </div>
 
         <div class="projects-grid">
           <!-- Project 1: HUSTVA -->
-          <article class="project-card reveal">
-            <div class="project-header">
-              <div>
-                <h3 class="project-title">HUSTVA — Agentic Academic Chatbot</h3>
+          <article class="project-card spotlight-card project-card--agent">
+            <div class="project-card-inner">
+              <div class="project-header">
+                <div>
+                  <span class="project-kicker project-kicker--agent">AGENTIC STATE MACHINE · GUARDRAILED</span>
+                  <h3 class="project-title">HUSTVA — Agentic Academic Chatbot</h3>
+                </div>
                 <p class="project-period">Graduation thesis · Feb–Jul 2026</p>
               </div>
+
+              <p class="project-description">
+                LangGraph state machine (dual-router → ReAct → compose → finalize) with a global error guard and MongoDB checkpointing; hybrid intent router (regex + kNN over 145 examples, leave-one-out recall 97.9% → 100%); parallel ReAct tool loop with timeouts and bounded retry; mandatory-RAG safety net for grounded, cited answers; ingress prompt-injection guard and confidence-gated hallucination guard; dual-lane SSE A/B harness.
+              </p>
+
+              <!-- HUSTVA Inline SVG Flow Diagram -->
+              <div class="diagram-wrapper" role="region" aria-label="HUSTVA architecture diagram">
+                <div class="diagram-label-bar">
+                  <span class="diagram-caption">STATE GRAPH EXECUTION FLOW</span>
+                  <span class="diagram-status diagram-status--guard">Guard Active · 97.9% → 100% LOO Recall</span>
+                </div>
+                <div class="diagram-scroll">
+                  <svg class="arch-svg" viewBox="0 0 680 128" role="img" aria-label="HUSTVA flow: input passes Guard (amber) on input edge then flows through Router, ReAct, Compose, and Finalize">
+                    <title>HUSTVA Architecture: Guard on input edge, Router to ReAct to Compose to Finalize</title>
+                    <!-- Input Line into Guard and Router -->
+                    <line class="flow-edge flow-edge--guard" x1="20" y1="42" x2="72" y2="42" />
+                    <line class="flow-edge flow-edge--guard" x1="120" y1="64" x2="162" y2="64" />
+                    <!-- Deflected threat path from Guard -->
+                    <path class="flow-edge flow-edge--blocked" d="M 114 90 L 114 112 L 154 112" fill="none" />
+                    <circle class="node-dot node-dot--guard" cx="158" cy="112" r="3.5" />
+                    <text class="svg-micro svg-micro--guard" x="167" y="115">blocked threat</text>
+
+                    <!-- Guard Side Node on Input Edge -->
+                    <g transform="translate(66, 20)">
+                      <rect class="svg-node svg-node--guard" x="0" y="0" width="96" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--guard" x="48" y="21" text-anchor="middle">Guard</text>
+                      <text class="svg-node-sub" x="48" y="35" text-anchor="middle">ingress shield</text>
+                    </g>
+
+                    <!-- Edge: Guard/Input -> Router -->
+                    <path class="flow-edge flow-edge--agent" d="M 162 42 L 198 42" fill="none" />
+
+                    <!-- Node 1: Router -->
+                    <g transform="translate(198, 20)">
+                      <rect class="svg-node svg-node--agent" x="0" y="0" width="96" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--agent" x="48" y="21" text-anchor="middle">Router</text>
+                      <text class="svg-node-sub" x="48" y="35" text-anchor="middle">regex + kNN</text>
+                    </g>
+
+                    <!-- Edge: Router -> ReAct -->
+                    <line class="flow-edge flow-edge--agent" x1="294" y1="42" x2="330" y2="42" />
+
+                    <!-- Node 2: ReAct -->
+                    <g transform="translate(330, 20)">
+                      <rect class="svg-node svg-node--agent" x="0" y="0" width="96" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--agent" x="48" y="21" text-anchor="middle">ReAct</text>
+                      <text class="svg-node-sub" x="48" y="35" text-anchor="middle">parallel tools</text>
+                    </g>
+
+                    <!-- Edge: ReAct -> Compose -->
+                    <line class="flow-edge flow-edge--signal" x1="426" y1="42" x2="462" y2="42" />
+
+                    <!-- Node 3: Compose -->
+                    <g transform="translate(462, 20)">
+                      <rect class="svg-node svg-node--signal" x="0" y="0" width="96" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--signal" x="48" y="21" text-anchor="middle">Compose</text>
+                      <text class="svg-node-sub" x="48" y="35" text-anchor="middle">mandatory RAG</text>
+                    </g>
+
+                    <!-- Edge: Compose -> Finalize -->
+                    <line class="flow-edge flow-edge--signal" x1="558" y1="42" x2="592" y2="42" />
+
+                    <!-- Node 4: Finalize -->
+                    <g transform="translate(592, 20)">
+                      <rect class="svg-node svg-node--signal" x="0" y="0" width="76" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--signal" x="38" y="21" text-anchor="middle">Finalize</text>
+                      <text class="svg-node-sub" x="38" y="35" text-anchor="middle">SSE stream</text>
+                    </g>
+
+                    <!-- Global Error / Hallucination Guard Feedback Rail -->
+                    <path class="flow-edge flow-edge--guard-subtle" d="M 114 64 L 114 90 L 630 90 L 630 64" fill="none" />
+                    <text class="svg-micro" x="378" y="84" text-anchor="middle">MongoDB checkpointing · global error &amp; confidence-gated hallucination guard</text>
+                  </svg>
+                </div>
+              </div>
+
+              <ul class="chip-list" aria-label="HUSTVA technology stack">
+                <li class="chip">NestJS</li>
+                <li class="chip">TypeScript</li>
+                <li class="chip chip--agent">LangGraph</li>
+                <li class="chip chip--agent">Gemini</li>
+                <li class="chip chip--signal">MongoDB</li>
+                <li class="chip chip--signal">Redis</li>
+                <li class="chip chip--signal">SSE</li>
+                <li class="chip chip--guard">Langfuse</li>
+              </ul>
             </div>
-            <p class="project-description">
-              LangGraph state machine (dual-router → ReAct → compose → finalize) with a global error guard and MongoDB checkpointing; hybrid intent router (regex + kNN over 145 examples, leave-one-out recall 97.9% → 100%); parallel ReAct tool loop with timeouts and bounded retry; mandatory-RAG safety net for grounded, cited answers; ingress prompt-injection guard and confidence-gated hallucination guard; dual-lane SSE A/B harness.
-            </p>
-            <ul class="chip-list" aria-label="HUSTVA technology stack">
-              <li class="chip">NestJS</li>
-              <li class="chip">TypeScript</li>
-              <li class="chip">LangGraph</li>
-              <li class="chip">Gemini</li>
-              <li class="chip">MongoDB</li>
-              <li class="chip">Redis</li>
-              <li class="chip">SSE</li>
-              <li class="chip">Langfuse</li>
-            </ul>
           </article>
 
           <!-- Project 2: KMS -->
-          <article class="project-card reveal">
-            <div class="project-header">
-              <div>
-                <h3 class="project-title">KMS — Knowledge Management Platform</h3>
+          <article class="project-card spotlight-card project-card--signal">
+            <div class="project-card-inner">
+              <div class="project-header">
+                <div>
+                  <span class="project-kicker project-kicker--signal">CQRS INGESTION · HYBRID RETRIEVAL</span>
+                  <h3 class="project-title">KMS — Knowledge Management Platform</h3>
+                </div>
                 <p class="project-period">Graduation thesis · Feb–Jul 2026</p>
               </div>
+
+              <p class="project-description">
+                Crawl → parse → chunk → embed → index → version pipeline behind a CQRS design and a single retrieval gateway; zero-downtime versioning with SHA-256 content-hash vector inheritance and atomic version-pointer flip; cost-aware multi-stage parser with per-page OCR escalation; async 3-tier ingestion over RabbitMQ with a queue-depth autoscaler; hybrid retrieval (BGE-M3 dense + BM25 → RRF → cross-encoder rerank); 4-layer multi-tenant isolation with a Milvus filter-injection whitelist.
+              </p>
+
+              <!-- KMS Inline SVG Flow Diagram -->
+              <div class="diagram-wrapper" role="region" aria-label="KMS ingestion and versioning pipeline diagram">
+                <div class="diagram-label-bar">
+                  <span class="diagram-caption">INGESTION &amp; ATOMIC VERSION PIPELINE</span>
+                  <span class="diagram-status diagram-status--signal">SHA-256 Vector Inheritance · Zero-Downtime Flip</span>
+                </div>
+                <div class="diagram-scroll">
+                  <svg class="arch-svg" viewBox="0 0 680 110" role="img" aria-label="KMS pipeline: Crawl to Parse to Chunk to Embed to Index to Version">
+                    <title>KMS Pipeline: Crawl to Parse to Chunk to Embed to Index to Version</title>
+
+                    <!-- Stage 1: Crawl -->
+                    <g transform="translate(10, 18)">
+                      <rect class="svg-node svg-node--signal" x="0" y="0" width="88" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--signal" x="44" y="21" text-anchor="middle">Crawl</text>
+                      <text class="svg-node-sub" x="44" y="35" text-anchor="middle">RabbitMQ</text>
+                    </g>
+                    <line class="flow-edge flow-edge--signal" x1="98" y1="40" x2="122" y2="40" />
+
+                    <!-- Stage 2: Parse -->
+                    <g transform="translate(122, 18)">
+                      <rect class="svg-node svg-node--signal" x="0" y="0" width="88" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--signal" x="44" y="21" text-anchor="middle">Parse</text>
+                      <text class="svg-node-sub" x="44" y="35" text-anchor="middle">OCR escalate</text>
+                    </g>
+                    <line class="flow-edge flow-edge--signal" x1="210" y1="40" x2="234" y2="40" />
+
+                    <!-- Stage 3: Chunk -->
+                    <g transform="translate(234, 18)">
+                      <rect class="svg-node svg-node--signal" x="0" y="0" width="88" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--signal" x="44" y="21" text-anchor="middle">Chunk</text>
+                      <text class="svg-node-sub" x="44" y="35" text-anchor="middle">SHA-256 hash</text>
+                    </g>
+                    <line class="flow-edge flow-edge--agent" x1="322" y1="40" x2="346" y2="40" />
+
+                    <!-- Stage 4: Embed -->
+                    <g transform="translate(346, 18)">
+                      <rect class="svg-node svg-node--agent" x="0" y="0" width="88" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--agent" x="44" y="21" text-anchor="middle">Embed</text>
+                      <text class="svg-node-sub" x="44" y="35" text-anchor="middle">BGE-M3 + BM25</text>
+                    </g>
+                    <line class="flow-edge flow-edge--signal" x1="434" y1="40" x2="458" y2="40" />
+
+                    <!-- Stage 5: Index -->
+                    <g transform="translate(458, 18)">
+                      <rect class="svg-node svg-node--signal" x="0" y="0" width="88" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--signal" x="44" y="21" text-anchor="middle">Index</text>
+                      <text class="svg-node-sub" x="44" y="35" text-anchor="middle">Milvus RRF</text>
+                    </g>
+                    <line class="flow-edge flow-edge--guard" x1="546" y1="40" x2="570" y2="40" />
+
+                    <!-- Stage 6: Version -->
+                    <g transform="translate(570, 18)">
+                      <rect class="svg-node svg-node--guard" x="0" y="0" width="98" height="44" rx="8" />
+                      <text class="svg-node-title svg-node-title--guard" x="49" y="21" text-anchor="middle">Version</text>
+                      <text class="svg-node-sub" x="49" y="35" text-anchor="middle">atomic pointer</text>
+                    </g>
+
+                    <!-- Bottom isolation annotation -->
+                    <line class="flow-edge flow-edge--guard-subtle" x1="20" y1="84" x2="660" y2="84" />
+                    <text class="svg-micro" x="340" y="99" text-anchor="middle">4-layer multi-tenant isolation · Milvus filter-injection whitelist · cross-encoder rerank</text>
+                  </svg>
+                </div>
+              </div>
+
+              <ul class="chip-list" aria-label="KMS technology stack">
+                <li class="chip">Python</li>
+                <li class="chip">FastAPI</li>
+                <li class="chip chip--signal">Milvus</li>
+                <li class="chip chip--signal">MongoDB</li>
+                <li class="chip chip--signal">RabbitMQ</li>
+                <li class="chip chip--signal">MinIO</li>
+                <li class="chip chip--signal">Redis</li>
+                <li class="chip chip--guard">Docker</li>
+              </ul>
             </div>
-            <p class="project-description">
-              Crawl → parse → chunk → embed → index → version pipeline behind a CQRS design and a single retrieval gateway; zero-downtime versioning with SHA-256 content-hash vector inheritance and atomic version-pointer flip; cost-aware multi-stage parser with per-page OCR escalation; async 3-tier ingestion over RabbitMQ with a queue-depth autoscaler; hybrid retrieval (BGE-M3 dense + BM25 → RRF → cross-encoder rerank); 4-layer multi-tenant isolation with a Milvus filter-injection whitelist.
-            </p>
-            <ul class="chip-list" aria-label="KMS technology stack">
-              <li class="chip">Python</li>
-              <li class="chip">FastAPI</li>
-              <li class="chip">Milvus</li>
-              <li class="chip">MongoDB</li>
-              <li class="chip">RabbitMQ</li>
-              <li class="chip">MinIO</li>
-              <li class="chip">Redis</li>
-              <li class="chip">Docker</li>
-            </ul>
           </article>
 
           <!-- Project 3: Multi-agent dev workflow -->
-          <article class="project-card reveal">
-            <div class="project-header">
-              <div>
-                <h3 class="project-title">Multi-agent dev workflow</h3>
+          <article class="project-card spotlight-card project-card--guard">
+            <div class="project-card-inner">
+              <div class="project-header">
+                <div>
+                  <span class="project-kicker project-kicker--guard">ORCHESTRATION PROTOCOL · VERIFIED MERGE</span>
+                  <h3 class="project-title">Multi-agent dev workflow</h3>
+                </div>
                 <p class="project-period">Agentic engineering workflow</p>
               </div>
+
+              <p class="project-description">
+                Claude Code as lead dispatching tasks to Codex and Antigravity via a file-based task protocol (spec → dispatch → independent verification → merge).
+              </p>
+
+              <ul class="chip-list" aria-label="Multi-agent dev workflow stack">
+                <li class="chip chip--agent">Claude Code</li>
+                <li class="chip chip--signal">Codex</li>
+                <li class="chip chip--guard">Antigravity</li>
+              </ul>
             </div>
-            <p class="project-description">
-              Claude Code as lead dispatching tasks to Codex and Antigravity via a file-based task protocol (spec → dispatch → independent verification → merge).
-            </p>
-            <ul class="chip-list" aria-label="Multi-agent dev workflow stack">
-              <li class="chip">Claude Code</li>
-              <li class="chip">Codex</li>
-              <li class="chip">Antigravity</li>
-            </ul>
           </article>
         </div>
       </div>
@@ -240,13 +500,13 @@
     <!-- Experience Section -->
     <section id="experience" class="section" aria-labelledby="experience-heading">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">03 / Career</span>
+        <div class="section-header">
+          <span class="section-eyebrow">Engineering Trajectory</span>
           <h2 id="experience-heading" class="section-title">Experience</h2>
         </div>
 
-        <ol class="timeline">
-          <li class="timeline-item reveal">
+        <ol class="timeline" id="experience-timeline">
+          <li class="timeline-item timeline-item--guard">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-content">
               <div class="timeline-header">
@@ -259,7 +519,7 @@
             </div>
           </li>
 
-          <li class="timeline-item reveal">
+          <li class="timeline-item timeline-item--signal">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-content">
               <div class="timeline-header">
@@ -272,7 +532,7 @@
             </div>
           </li>
 
-          <li class="timeline-item reveal">
+          <li class="timeline-item timeline-item--agent">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-content">
               <div class="timeline-header">
@@ -291,13 +551,95 @@
     <!-- Skills Section -->
     <section id="skills" class="section" aria-labelledby="skills-heading">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">04 / Capabilities</span>
+        <div class="section-header">
+          <span class="section-eyebrow">Capability Matrix</span>
           <h2 id="skills-heading" class="section-title">Skills</h2>
         </div>
 
+        <!-- Infinite Horizontal Marquee -->
+        <div class="skills-marquee" aria-label="Core technology stream">
+          <div class="marquee-track">
+            <ul class="marquee-group">
+              <li class="marquee-item"><span class="m-dot m-dot--agent"></span>LangGraph</li>
+              <li class="marquee-item"><span class="m-dot m-dot--agent"></span>ReAct Agents</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>Hybrid RAG</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>Milvus</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>Guardrails</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>TypeScript</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>Python</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>NestJS</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>FastAPI</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>MongoDB</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>RabbitMQ</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>Redis</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>AWS Lambda &amp; CDK</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>Langfuse</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>OpenTelemetry</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>React &amp; Next.js</li>
+            </ul>
+            <ul class="marquee-group" aria-hidden="true">
+              <li class="marquee-item"><span class="m-dot m-dot--agent"></span>LangGraph</li>
+              <li class="marquee-item"><span class="m-dot m-dot--agent"></span>ReAct Agents</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>Hybrid RAG</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>Milvus</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>Guardrails</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>TypeScript</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>Python</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>NestJS</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>FastAPI</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>MongoDB</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>RabbitMQ</li>
+              <li class="marquee-item"><span class="m-dot m-dot--signal"></span>Redis</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>AWS Lambda &amp; CDK</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>Langfuse</li>
+              <li class="marquee-item"><span class="m-dot m-dot--guard"></span>OpenTelemetry</li>
+              <li class="marquee-item"><span class="m-dot m-dot--neutral"></span>React &amp; Next.js</li>
+            </ul>
+          </div>
+        </div>
+
         <div class="skills-grid">
-          <div class="skill-group reveal">
+          <div class="skill-group skill-group--agent">
+            <h3 class="skill-group-title">AI / LLM</h3>
+            <ul class="chip-list" aria-label="AI and LLM">
+              <li class="chip chip--agent">LangGraph</li>
+              <li class="chip chip--agent">ReAct agents</li>
+              <li class="chip chip--signal">RAG</li>
+              <li class="chip chip--signal">hybrid retrieval</li>
+              <li class="chip chip--agent">LLM evaluation (Precision@k, MRR, RAGAS)</li>
+              <li class="chip chip--guard">guardrails</li>
+            </ul>
+          </div>
+
+          <div class="skill-group skill-group--signal">
+            <h3 class="skill-group-title">Data &amp; messaging</h3>
+            <ul class="chip-list" aria-label="Data and messaging">
+              <li class="chip chip--signal">MongoDB</li>
+              <li class="chip chip--signal">Redis</li>
+              <li class="chip chip--signal">MySQL</li>
+              <li class="chip chip--signal">SQL Server</li>
+              <li class="chip chip--signal">Milvus</li>
+              <li class="chip chip--signal">RabbitMQ</li>
+              <li class="chip chip--signal">AWS SQS</li>
+              <li class="chip chip--signal">MinIO/S3</li>
+            </ul>
+          </div>
+
+          <div class="skill-group skill-group--guard">
+            <h3 class="skill-group-title">Cloud &amp; ops</h3>
+            <ul class="chip-list" aria-label="Cloud and ops">
+              <li class="chip chip--guard">AWS (Lambda, API Gateway, SQS, CDK)</li>
+              <li class="chip chip--guard">Docker</li>
+              <li class="chip chip--guard">Kubernetes</li>
+              <li class="chip chip--guard">OpenTelemetry</li>
+              <li class="chip chip--guard">GitHub Actions</li>
+              <li class="chip chip--guard">Sentry</li>
+              <li class="chip chip--guard">CloudWatch</li>
+              <li class="chip chip--guard">Langfuse</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
             <h3 class="skill-group-title">Languages</h3>
             <ul class="chip-list" aria-label="Languages">
               <li class="chip">TypeScript</li>
@@ -307,7 +649,7 @@
             </ul>
           </div>
 
-          <div class="skill-group reveal">
+          <div class="skill-group">
             <h3 class="skill-group-title">Backend</h3>
             <ul class="chip-list" aria-label="Backend">
               <li class="chip">NestJS</li>
@@ -319,47 +661,7 @@
             </ul>
           </div>
 
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">AI / LLM</h3>
-            <ul class="chip-list" aria-label="AI and LLM">
-              <li class="chip">LangGraph</li>
-              <li class="chip">ReAct agents</li>
-              <li class="chip">RAG</li>
-              <li class="chip">hybrid retrieval</li>
-              <li class="chip">LLM evaluation (Precision@k, MRR, RAGAS)</li>
-              <li class="chip">guardrails</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Data &amp; messaging</h3>
-            <ul class="chip-list" aria-label="Data and messaging">
-              <li class="chip">MongoDB</li>
-              <li class="chip">Redis</li>
-              <li class="chip">MySQL</li>
-              <li class="chip">SQL Server</li>
-              <li class="chip">Milvus</li>
-              <li class="chip">RabbitMQ</li>
-              <li class="chip">AWS SQS</li>
-              <li class="chip">MinIO/S3</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Cloud &amp; ops</h3>
-            <ul class="chip-list" aria-label="Cloud and ops">
-              <li class="chip">AWS (Lambda, API Gateway, SQS, CDK)</li>
-              <li class="chip">Docker</li>
-              <li class="chip">Kubernetes</li>
-              <li class="chip">OpenTelemetry</li>
-              <li class="chip">GitHub Actions</li>
-              <li class="chip">Sentry</li>
-              <li class="chip">CloudWatch</li>
-              <li class="chip">Langfuse</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
+          <div class="skill-group">
             <h3 class="skill-group-title">Frontend</h3>
             <ul class="chip-list" aria-label="Frontend">
               <li class="chip">React</li>
@@ -373,19 +675,19 @@
     <!-- Education Section -->
     <section id="education" class="section" aria-labelledby="education-heading">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">05 / Academic Background</span>
+        <div class="section-header">
+          <span class="section-eyebrow">Academic Background</span>
           <h2 id="education-heading" class="section-title">Education</h2>
         </div>
 
-        <div class="education-card reveal">
+        <div class="education-card">
           <div class="education-main">
             <h3 class="education-school">Hanoi University of Science and Technology (HUST)</h3>
             <p class="education-degree">B.Eng. Computer Science · Class of 2026</p>
           </div>
           <div class="education-badges" aria-label="Academic metrics">
-            <span class="edu-badge">CPA 3.6/4.0</span>
-            <span class="edu-badge">IELTS 7.0</span>
+            <span class="edu-badge edu-badge--signal">CPA 3.6/4.0</span>
+            <span class="edu-badge edu-badge--agent">IELTS 7.0</span>
           </div>
         </div>
       </div>
@@ -395,38 +697,56 @@
   <!-- Contact / Footer -->
   <footer id="contact" class="site-footer" aria-labelledby="contact-heading">
     <div class="container">
-      <div class="footer-card reveal">
-        <div class="footer-info">
-          <span class="section-eyebrow">06 / Contact</span>
-          <h2 id="contact-heading" class="footer-title">Get in touch</h2>
-          <p class="footer-subtitle">
-            Based in Hanoi, Vietnam. Reach out via email for AI / full-stack engineering opportunities.
-          </p>
-          <a href="mailto:13charlottekatakuri@gmail.com" class="btn btn-primary footer-cta">
-            13charlottekatakuri@gmail.com
-          </a>
-        </div>
+      <div class="footer-top">
+        <span class="section-eyebrow">Contact &amp; Channels</span>
+        <h2 id="contact-heading" class="footer-display">Let's build something safe.</h2>
+        <p class="footer-subtitle">
+          Based in Hanoi, Vietnam. Reach out via email for AI / full-stack engineering opportunities.
+        </p>
 
-        <div class="footer-links-block">
-          <ul class="footer-links" aria-label="Contact and social links">
-            <li>
-              <a href="mailto:13charlottekatakuri@gmail.com" class="footer-link">Email</a>
-            </li>
-            <li>
-              <a href="https://github.com/qinshihuangtheconqueror" target="_blank" rel="noopener" class="footer-link">GitHub</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/huy-le-hoang-18064525b/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
-            </li>
-          </ul>
-          <p class="footer-meta">
-            Le Hoang Huy (<span lang="vi">Lê Hoàng Huy</span>) · AI Full-stack Engineer · Hanoi, Vietnam
-          </p>
+        <div class="footer-email-row">
+          <span id="contact-email-text" class="footer-email" tabindex="0">13charlottekatakuri@gmail.com</span>
+          <div class="footer-email-actions">
+            <button
+              type="button"
+              id="copy-email-btn"
+              class="btn btn-primary magnetic-btn"
+              data-email="13charlottekatakuri@gmail.com"
+              aria-label="Copy email address 13charlottekatakuri@gmail.com"
+            >
+              <svg class="btn-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copy-email-label" aria-live="polite">Copy email</span>
+            </button>
+            <a href="mailto:13charlottekatakuri@gmail.com" class="btn btn-secondary magnetic-btn">
+              <span>Send mail</span>
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="footer-bottom">
+        <ul class="footer-links" aria-label="Contact and social links">
+          <li>
+            <a href="mailto:13charlottekatakuri@gmail.com" class="footer-link">Email</a>
+          </li>
+          <li>
+            <a href="https://github.com/qinshihuangtheconqueror" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/huy-le-hoang-18064525b/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+          </li>
+        </ul>
+        <p class="footer-meta">
+          Le Hoang Huy (<span lang="vi">Lê Hoàng Huy</span>) · AI Full-stack Engineer · Hanoi, Vietnam
+        </p>
       </div>
     </div>
   </footer>
 
+  <script src="hero-graph.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>
